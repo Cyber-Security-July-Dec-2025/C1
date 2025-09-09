@@ -1,7 +1,5 @@
-# Secure-FIle-Vault
 # SecureFileVault: A Zero-Knowledge Encrypted File Store
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
@@ -10,28 +8,7 @@ SecureFileVault is a modern, web-based application that allows users to store fi
 
 ---
 
-## 📸 Application Preview
-
-*(It is highly recommended to replace this placeholder with a GIF demonstrating the key generation, file upload, and decryption process.)*
-
-![SecureFileVault Demo](https://i.imgur.com/your-demo-gif-placeholder.gif)
-
----
-
-## ✨ Core Features
-
--   🔐 **Complete User Authentication**: Secure JWT-based signup, login, email verification, and password reset functionality.
--   💻 **Client-Side Cryptography**: All encryption, decryption, and hashing operations are performed in the user's browser using the robust **WebCrypto API**.
--   🛡️ **Zero-Knowledge Architecture**: The server has no access to unencrypted file content or the user's private keys, ensuring complete privacy.
--   🔑 **Hybrid Encryption Scheme**: Utilizes a powerful combination of **AES-256-GCM** for symmetric file encryption and **RSA-OAEP (2048-bit)** for asymmetric key encryption.
--   🔎 **File Integrity Verification**: Each file's **SHA-256 hash** is calculated before encryption and verified after decryption to protect against tampering and corruption.
--   🎨 **Interactive UI**: A modern, responsive interface with real-time feedback during cryptographic processes, built with React and Tailwind CSS.
--   📂 **Secure File Management**: Users can upload, view metadata (size, date), decrypt, download, and securely delete their files.
--   🛠️ **In-Browser Key Management**: Users can generate new RSA key pairs, save their public key to browser storage for convenience, and are prompted for their private key only when needed.
-
----
-
-## 🏛️ How It Works: The Cryptographic Flow
+## How It Works: The Cryptographic Flow
 
 The core security of this application relies on never sending sensitive, unencrypted data to the server.
 
@@ -56,7 +33,7 @@ The core security of this application relies on never sending sensitive, unencry
 
 ---
 
-## 🚀 Technology Stack
+## Technology Stack
 
 | Area      | Technology                                                                                                    |
 | :-------- | :------------------------------------------------------------------------------------------------------------ |
@@ -66,7 +43,7 @@ The core security of this application relies on never sending sensitive, unencry
 
 ---
 
-## 🛠️ Getting Started: Installation & Setup
+## Getting Started: Installation & Setup
 
 Follow these instructions to get the project up and running on your local machine.
 
@@ -80,43 +57,47 @@ Follow these instructions to get the project up and running on your local machin
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/securefilevault.git
-cd securefilevault
+git clone https://github.com/AryanPaul3/Secure-FIle-Vault/
+cd Secure-File-Vault
 ```
 
 ### 2. Backend Setup
 
 ```bash
-# Navigate to the backend directory
-cd backend
-
 # Install dependencies
 npm install
 
-# Create a .env file in the /backend directory
+# Create a .env file in the /root directory
 ```
 Now, open the newly created .env file and add the following environment variables. Replace the placeholder values with your own.
 
-### 3. .env (Backend)
+### 3. .env Setup
 ```bash
-PORT=5000
-NODE_ENV=development
+MONGO_URI = 
+PORT = 5000
+JWT_SECRET = your_seceret_key
+NODE_ENV = development
+NODEMAIL_EMAIL = your-email@gmail.com
+NODEMAIL_PASS = your_gmail_app_password
 
-# MongoDB Connection
-MONGO_URI=mongodb+srv://<user>:<password>@<cluster-url>/<db-name>?retryWrites=true&w=majority
-
-# JWT Secret
-JWT_SECRET=your_super_secret_and_long_jwt_key_that_is_hard_to_guess
-
-# Nodemailer Configuration (for email verification and password resets)
-EMAIL_HOST=smtp.gmail.com
-EMAIL_PORT=587
-EMAIL_USER=your-email@gmail.com
-EMAIL_PASS=your_gmail_app_password
-
-# Client URL (for links in emails)
-CLIENT_URL=http://localhost:5173
+CLIENT_URL = http://localhost:5173
 ```
+**Generating a Gmail App Password**
+To use Nodemailer with Gmail, you need to generate a special App Password. This is a 16-digit code that gives an app permission to access your Google Account.<br>
+Prerequisite: <br>
+You must have 2-Step Verification enabled on your Google Account.<br>
+Steps:
+1. Go to your Google Account: myaccount.google.com.
+2. Navigate to the Security tab on the left-hand menu.
+3. Scroll down to the "How you sign in to Google" section and click on 2-Step Verification. You may need to sign in again.
+4. Scroll to the very bottom of the page and click on App passwords.
+5. On the App passwords page, click Select app and choose Other (Custom name).
+6. Enter a name for the app, for example, SecureFileVault Dev. This is just for your reference.
+7. Click the Generate button.
+8. Google will display a 16-character password in a yellow box. Copy this password immediately. This is the only time you will see it.
+9. Paste this 16-character password into your .env file for the NODEMAIL_PASS variable.
+    Example: NODEMAIL_PASS = xxyy zzzz aaaa bbbb
+10. Click Done. You can now use this password in your application.
 
 ### 4. FrontEnd Setup
 ```bash
@@ -125,8 +106,23 @@ cd frontend
 
 # Install dependencies
 npm install
-
-# The frontend uses Vite, which handles environment variables differently.
-# No .env file is needed for local development as long as the backend runs on port 5000.
-# The API URL is configured in `fileStore.js` and `authStore.js` to switch automatically.
 ```
+
+### 5. Running the Application
+You will need two separate terminal windows to run both the backend and frontend servers concurrently.
+
+**Terminal 1: Start the Backend Server**
+```bash
+cd backend
+npm run dev
+```
+The backend API should now be running on http://localhost:5000
+
+**Terminal 2: Start the Frontend Development Server**
+```bash
+cd frontend
+npm run dev
+```
+The frontend application should now be accessible at http://localhost:5173
+
+
