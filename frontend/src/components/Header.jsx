@@ -1,5 +1,5 @@
 import { useAuthStore } from "../store/authStore";
-import Logo from "./Logo";
+// import Logo from "./Logo";
 
 const SunIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
@@ -20,7 +20,7 @@ export default function Header() {
   return (
     <div className="flex justify-between items-center p-4 bg-white dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 border-b border-zinc-200 dark:border-zinc-700 shadow-sm">
       <div className="flex items-center gap-3">
-        <Logo className="h-8 w-8" /> 
+        {/* <Logo className="h-8 w-8" />  */}
         <h1 className="text-xl font-bold text-zinc-700 dark:text-zinc-200">
           SyncSphere
         </h1>

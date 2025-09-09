@@ -18,7 +18,11 @@ export default function Sidebar() {
     return (
         <aside className="w-64 bg-white dark:bg-zinc-950/70 border-r border-zinc-200 dark:border-zinc-800 flex flex-col p-4">
             <div className="flex items-center gap-3 mb-8 px-2">
-                <Lock className="h-8 w-8 text-teal-500" />
+                <img 
+                    src="/SecureVaultLogo.png" 
+                    alt="SecureFileVault Logo" 
+                    className="h-12 w-12 object-contain"
+                />
                 <h1 className="text-xl font-bold">Confidential Storage</h1>
                 {/* <h1 className="text-xl font-bold">Secure File Vault</h1> */}
             </div>
@@ -37,8 +41,8 @@ export default function Sidebar() {
                 </div>
             </nav>
             <div className="mt-auto">
-                <button onClick={logout} className="w-full text-left text-zinc-500 dark:text-zinc-400 hover:bg-red-500 hover:text-white px-4 py-2 rounded-md transition-colors">
-                    End-to-end encrypted
+                <button onClick={logout} className="w-full text-left text-red-500 dark:text-red-400 hover:bg-red-500 hover:text-white px-4 py-2 rounded-md transition-colors cursor-pointer">
+                    Log Out
                 </button>
             </div>
         </aside>
