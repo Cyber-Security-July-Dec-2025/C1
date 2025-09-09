@@ -1,9 +1,4 @@
 # SecureFileVault: A Zero-Knowledge Encrypted File Store
-
-[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
-[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-
 SecureFileVault is a modern, web-based application that allows users to store files with the guarantee of confidentiality and integrity. It employs a **zero-knowledge architecture**, meaning all cryptographic operations are performed on the client-side (in the browser). The server only ever stores encrypted data blobs, ensuring that no one, not even the server administrators, can access the original file content.
 
 ---
