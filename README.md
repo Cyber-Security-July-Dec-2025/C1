@@ -1,4 +1,4 @@
-# <img src="./frontend/public/SecureVaultLogo.png" alt="Logo" width="40" valign="bottom"/> SecureFileVault: A Zero-Knowledge Encrypted File Store
+# <img src="./frontend/public/SecureVaultLogo.png" alt="Logo" width="40" valign="bottom"/> SecureFileVault: A Encrypted File Store
 SecureFileVault is a modern, web-based application that allows users to store files with the guarantee of confidentiality and integrity. It employs a **zero-knowledge architecture**, meaning all cryptographic operations are performed on the client-side (in the browser). The server only ever stores encrypted data blobs, ensuring that no one, not even the server administrators, can access the original file content.
 
 ---
