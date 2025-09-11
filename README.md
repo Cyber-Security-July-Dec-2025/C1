@@ -3,11 +3,11 @@ SecureFileVault is a modern, web-based application that allows users to store fi
 
 ---
 
-## How It Works: The Cryptographic Flow
+## # How It Works: The Cryptographic Flow
 
 The core security of this application relies on never sending sensitive, unencrypted data to the server.
 
-### Encryption Flow (Uploading a File)
+### 1. Encryption Flow (Uploading a File)
 
 1.  **File Selection**: The user selects a file in the browser.
 2.  **AES Key Generation**: A cryptographically secure, random **AES-256-GCM** key is generated in the browser. This key is unique for each file upload.
@@ -18,7 +18,7 @@ The core security of this application relies on never sending sensitive, unencry
     -   The encrypted file blob (containing the ciphertext and IV).
     -   The encrypted AES key.
 
-### Decryption Flow (Downloading a File)
+### 2. Decryption Flow (Downloading a File)
 
 1.  **Data Retrieval**: The client requests the encrypted file and its corresponding encrypted AES key from the server.
 2.  **Private Key Input**: The user is prompted to enter their **private RSA key** into the browser. This key is **never** sent to the server.
@@ -28,7 +28,7 @@ The core security of this application relies on never sending sensitive, unencry
 
 ---
 
-## Technology Stack
+## # Technology Stack
 
 | Area      | Technology                                                                                                    |
 | :-------- | :------------------------------------------------------------------------------------------------------------ |
@@ -38,7 +38,7 @@ The core security of this application relies on never sending sensitive, unencry
 
 ---
 
-## Getting Started: Installation & Setup
+## # Getting Started: Installation & Setup
 
 Follow these instructions to get the project up and running on your local machine.
 
@@ -68,7 +68,7 @@ Now, open the newly created .env file and add the following environment variable
 
 ### 3. .env Setup
 ```bash
-MONGO_URI = 
+MONGO_URI = your_mongo_uri
 PORT = 5000
 JWT_SECRET = your_seceret_key
 NODE_ENV = development
@@ -77,7 +77,7 @@ NODEMAIL_PASS = your_gmail_app_password
 
 CLIENT_URL = http://localhost:5173
 ```
-**Generating a Gmail App Password**
+**Generating a Gmail App Password:** <br>
 To use Nodemailer with Gmail, you need to generate a special App Password. This is a 16-digit code that gives an app permission to access your Google Account.<br>
 Prerequisite: <br>
 You must have 2-Step Verification enabled on your Google Account.<br>
