@@ -52,8 +52,8 @@ Follow these instructions to get the project up and running on your local machin
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/AryanPaul3/Secure-FIle-Vault/
-cd Secure-File-Vault
+git clone https://github.com/Cyber-Security-July-Dec-2025/C1.git
+cd C1
 ```
 
 ### 2. Backend Setup
